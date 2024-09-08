@@ -1,0 +1,113 @@
+/* General reset for margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f9f9f9;
+}
+
+/* The navigation menu styling */
+.menu {
+    position: relative;
+}
+
+/* Hide the checkbox */
+.menu-open {
+    display: none;
+}
+
+/* Hamburger icon */
+.menu-open-button {
+    background-color: #e1003c;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease;
+    z-index: 10;
+    margin-left: -5px;
+}
+
+/* The three lines in hamburger button */
+.menu-line {
+    display: block;
+    width: 40px;
+    height: 4px;
+    background-color: white;
+    margin: 2px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Transform lines into X when menu is open */
+.menu-open:checked + .menu-open-button .menu-line-1 {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-open:checked + .menu-open-button .menu-line-2 {
+    opacity: 0; /* Hide middle line */
+}
+
+.menu-open:checked + .menu-open-button .menu-line-3 {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Icons inside circles */
+.menu-item {
+    background-color: #e1003c;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    transition: transform 0.3s ease;
+    transform: scale(0); /* Start hidden */
+    z-index: 5;
+}
+
+/* Positioning the menu items*/
+.menu-open:checked ~ .menu-item:nth-of-type(1) {
+    transform: translateY(20px) scale(1);
+}
+
+.menu-open:checked ~ .menu-item:nth-of-type(2) {
+    transform: translateY(80px) scale(1);
+}
+
+.menu-open:checked ~ .menu-item:nth-of-type(3) {
+    transform: translateY(140px) scale(1);
+}
+
+.menu-open:checked ~ .menu-item:nth-of-type(4) {
+    transform: translateY(200px) scale(1);
+}
+
+.menu-open:checked ~ .menu-item:nth-of-type(5) {
+    transform: translateY(260px) scale(1);
+}
+
+/* Add some hover effect for the icons */
+.menu-item:hover {
+    background-color: white;
+    color: #e1003c;
+    border: 2px solid #e1003c;
+}
+
+/* spacing around the icons */
+.fa {
+    font-size: 24px;
+}
