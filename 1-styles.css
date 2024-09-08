@@ -1,0 +1,28 @@
+a {
+    text-decoration: none;
+    position: relative;
+    color: rgb(177, 15, 15);
+}
+
+a:visited {
+    text-decoration: none;
+    color: rgb(177, 15, 15);
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: top left;
+    transition: transform 0.4s ease;
+    background-color: rgb(177, 15, 15);
+    height: 3px;
+    bottom: -2px;
+    left: 0;
+}
+
+a:hover::after {
+    transform: scaleX(1);
+}
